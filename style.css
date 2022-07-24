@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "bold";
+  src: url("assets/font/IRANSansWeb\(FaNum\)_Bold.eot") format("eot"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Bold.woff") format("woff"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "light";
+  src: url("assets/font/IRANSansWeb\(FaNum\)_Light.eot") format("eot"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Light.woff") format("woff"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "medium";
+  src: url("assets/font/IRANSansWeb\(FaNum\)_Medium.eot") format("eot"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Medium.woff") format("woff"),
+    url("assets/font/IRANSansWeb\(FaNum\)_Medium.woff2") format("woff2");
+}
+/* init */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "medium";
+}
+body {
+  background-color: #e9e9e9;
+}
+
+/*     APP     */
+.header {
+  width: 60rem;
+  margin: 0 auto;
+  padding: 0rem 3rem;
+}
+.container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.5rem;
+}
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+}
+.form-container form {
+  flex: 1;
+  position: relative;
+}
+.form-container form input {
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.select-container {
+  position: relative;
+}
+.select-container::after {
+  content: "\25be";
+  position: absolute;
+  font-size: 3rem;
+  color: rgb(173, 59, 214);
+  right: 5%;
+  cursor: pointer;
+}
+.select {
+  appearance: none;
+  border: none;
+  outline: none;
+  color: rgb(173, 59, 214);
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 20rem;
+}
+.fa-circle-plus {
+  position: absolute;
+  font-size: 1.7rem;
+  top: 30%;
+  right: 2%;
+  color: rgb(173, 59, 214);
+  cursor: pointer;
+}
+.todos {
+  width: 30rem;
+  align-self: flex-start;
+}
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2.2rem;
+  background-color: #d4c1f3;
+  color: #6d28d9;
+  border-radius: 0.4rem;
+}
+.todo-item {
+  list-style-type: none;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
+}
+.fa-square-check {
+  cursor: pointer;
+  color: rgb(173, 59, 214);
+}
+.fa-trash-can {
+  cursor: pointer;
+  color: #db2777;
+}
