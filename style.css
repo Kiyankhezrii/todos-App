@@ -100,6 +100,8 @@ body {
 .todos {
   width: 30rem;
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 .todo {
   display: flex;
@@ -112,6 +114,12 @@ body {
   background-color: #d4c1f3;
   color: #6d28d9;
   border-radius: 0.4rem;
+}
+.completed {
+  opacity: 0.5;
+}
+.completed li {
+  text-decoration: line-through;
 }
 .todo-item {
   list-style-type: none;

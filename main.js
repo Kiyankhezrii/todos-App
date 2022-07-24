@@ -3,10 +3,11 @@ const form = document.querySelector(".form");
 const input = document.querySelector(".input");
 const addBtn = document.querySelector(".btn");
 const todosContainer = document.querySelector(".todos");
+const select = document.querySelector(".select");
 
-const addTodo = function (val) {
+const addTodo = function (val, compClass = "") {
   const html = `
-    <div class="todo">
+    <div class="todo ${compClass}">
          <li class="todo-item">${val}</li>
          <div class="icons">
            <i class="fa-solid fa-square-check"></i>
@@ -54,8 +55,32 @@ todosContainer.addEventListener("click", (e) => {
     e.target.parentElement.parentElement.remove();
   } else if (e.target.classList.contains("fa-square-check")) {
     // done todo
-    e.target.parentElement.parentElement.style.opacity = ".5";
-    e.target.parentElement.previousElementSibling.style.textDecoration =
-      "line-through";
+    e.target.parentElement.parentElement.classList.add("completed");
   }
+});
+select.addEventListener("click", (e) => {
+  const todos = [...todosContainer.children];
+  todos.forEach((t) => {
+    switch (e.target.value) {
+      case "all":
+        t.style.display = "flex";
+        break;
+
+      case "completed":
+        if (t.classList.contains("completed")) {
+          t.style.display = "flex";
+        } else {
+          t.style.display = "none";
+        }
+        break;
+
+      case "uncompleted":
+        if (!t.classList.contains("completed")) {
+          t.style.display = "flex";
+        } else {
+          t.style.display = "none";
+        }
+        break;
+    }
+  });
 });
