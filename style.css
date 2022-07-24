@@ -102,6 +102,7 @@ body {
   align-self: flex-start;
   display: flex;
   flex-direction: column;
+  
 }
 .todo {
   display: flex;
