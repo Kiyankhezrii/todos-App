@@ -17,8 +17,24 @@ const addTodo = function (val) {
   todosContainer.insertAdjacentHTML("afterbegin", html);
 };
 
-addBtn.addEventListener("submit", (e) => {
+addBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addTodo(input.value);
+  setStorage(input.value)
   input.value = "";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const todos = getStorage();
+  todos?.forEach((t) => addTodo(t));
+});
+// local Storage
+
+const setStorage = function (todo) {
+  const todos = getStorage() || [];
+  const newTodo=[...todos,todo]
+  localStorage.setItem("todos", JSON.stringify(newTodo));
+};
+const getStorage = function () {
+  return JSON.parse(localStorage.getItem("todos"));
+};
